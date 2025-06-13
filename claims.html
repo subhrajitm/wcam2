@@ -29,37 +29,37 @@
                     style="font-weight: 700; font-size: 1.2rem; background: linear-gradient(135deg, #f97316, #ea580c, #c2410c); -webkit-background-clip: text; background-clip: text; color: transparent;">WCA</span>
             </a>
         </div>
-
+        
         <nav class="sidebar-nav">
-            <div class="nav-section">
-                <div class="nav-section-title">Main Menu</div>
-                <div class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="nav-icon bi bi-grid"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </div>
-                <div class="nav-item">
-                    <a href="claims.html" class="nav-link active">
-                        <i class="nav-icon bi bi-file-text"></i>
-                        <span>Claims</span>
-                    </a>
-                </div>
-            </div>
-
+    <div class="nav-section">
+                <div class="nav-section-title">Main</div>
+        <div class="nav-item">
+            <a href="index.html" class="nav-link">
+                        <i class="bi bi-speedometer2 nav-icon"></i>
+                        Claim Metrics
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="claims.html" class="nav-link active">
+                        <i class="bi bi-file-earmark-text nav-icon"></i>
+                        Claim Assist
+            </a>
+        </div>
+    </div>
+    
             <div class="bottom-nav-section">
                 <div style="display: flex; justify-content: space-between; padding: 0.5rem;">
-                    <button class="nav-link" style="flex: 1; margin-right: 0.5rem;">
-                        <i class="nav-icon bi bi-box-arrow-right"></i>
-                        <span>Logout</span>
-                    </button>
-                    <button class="nav-link" style="flex: 1; margin-left: 0.5rem;">
-                        <i class="nav-icon bi bi-gear"></i>
-                        <span>Settings</span>
-                    </button>
-                </div>
-            </div>
-        </nav>
+            <button class="nav-link" style="flex: 1; margin-right: 0.5rem;">
+                <i class="nav-icon bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </button>
+            <button class="nav-link" style="flex: 1; margin-left: 0.5rem;">
+                <i class="nav-icon bi bi-gear"></i>
+                <span>Settings</span>
+            </button>
+        </div>
+    </div>
+</nav>
     </div>
 
     <!-- Main Content -->
@@ -89,65 +89,51 @@
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-header">
-                        <div class="metric-title">Total Claims</div>
+                        <div class="metric-title">Due Invoices</div>
                     </div>
-                    <div class="metric-value">1,247</div>
+                    <div class="metric-value">16</div>
                     <div class="metric-footer">
-                        <div class="metric-change positive">
-                            vs last month +12%
+                        <div class="metric-change negative" style="color: #e53e3e;">
+                            70% of total
                         </div>
-                        <a href="#" class="see-details">
-                            See Details
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <span style="color: var(--text-secondary); font-size: 0.9em;">Requires Attention</span>
                     </div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-header">
-                        <div class="metric-title">Approved Claims</div>
+                        <div class="metric-title">Issued Invoices</div>
                     </div>
-                    <div class="metric-value">892</div>
+                    <div class="metric-value">5</div>
                     <div class="metric-footer">
-                        <div class="metric-change positive">
-                            vs last month +8%
+                        <div class="metric-change positive" style="color: #38a169;">
+                            22% of total
                         </div>
-                        <a href="#" class="see-details">
-                            See Details
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <span style="color: var(--text-secondary); font-size: 0.9em;">Completed</span>
                     </div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-header">
-                        <div class="metric-title">Pending Claims</div>
+                        <div class="metric-title">Upcoming Invoices</div>
                     </div>
-                    <div class="metric-value">234</div>
+                    <div class="metric-value">2</div>
                     <div class="metric-footer">
-                        <div class="metric-change negative">
-                            vs last month -2%
+                        <div class="metric-change" style="color: #d97706;">
+                            9% of total
                         </div>
-                        <a href="#" class="see-details">
-                            See Details
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <span style="color: var(--text-secondary); font-size: 0.9em;">Scheduled</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Claims Table Section -->
+            <!-- Invoice Table Section -->
             <div class="table-section" id="claimsTableSection">
                 <div class="table-header">
-                    <h3 class="table-title">Claims Data Table</h3>
+                    <h3 class="table-title">Final Invoice Status</h3>
                     <div class="table-actions">
                         <div class="table-search">
                             <i class="bi bi-search"></i>
-                            <input type="text" id="claimsSearch" placeholder="Search claims..."
-                                onkeyup="searchClaims()">
+                            <input type="text" id="claimsSearch" placeholder="Search shop...">
                         </div>
-                        <button class="btn-filter">
-                            <i class="bi bi-funnel"></i>
-                            Filter
-                        </button>
                         <button class="btn-export">
                             <i class="bi bi-download"></i>
                             Export
@@ -157,39 +143,47 @@
                 <table class="modern-table" id="claimsTable">
                     <thead>
                         <tr>
-                            <th>Claim ID</th>
-                            <th>Claimant Name</th>
-                            <th>Policy Number</th>
-                            <th>Claim Type</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Date Filed</th>
-                            <th>Actions</th>
+                            <th>Shop</th>
+                            <th># of Engines</th>
+                            <th>Due</th>
+                            <th>Issued</th>
+                            <th>Upcoming</th>
                         </tr>
                     </thead>
                     <tbody id="claimsTableBody">
-                        <!-- Claims data will be populated by JavaScript -->
+                        <tr>
+                            <td>Shop1</td>
+                            <td>12</td>
+                            <td><span style="color:#e53e3e; font-weight:600;">10</span></td>
+                            <td><span style="color:#38a169; font-weight:600;">1</span></td>
+                            <td><span style="color:#d97706; font-weight:600;">1</span></td>
+                        </tr>
+                        <tr>
+                            <td>Shop2</td>
+                            <td>7</td>
+                            <td><span style="color:#e53e3e; font-weight:600;">5</span></td>
+                            <td><span style="color:#38a169; font-weight:600;">1</span></td>
+                            <td><span style="color:#d97706; font-weight:600;">1</span></td>
+                        </tr>
+                        <tr>
+                            <td>Shop3</td>
+                            <td>4</td>
+                            <td><span style="color:#e53e3e; font-weight:600;">1</span></td>
+                            <td><span style="color:#38a169; font-weight:600;">3</span></td>
+                            <td><span style="color:#d97706; font-weight:600;">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>-</td>
+                            <td><span style="color:#e53e3e; font-weight:600;">16</span></td>
+                            <td><span style="color:#38a169; font-weight:600;">5</span></td>
+                            <td><span style="color:#d97706; font-weight:600;">2</span></td>
+                        </tr>
                     </tbody>
                 </table>
-
-                <!-- Pagination Controls -->
-                <div class="pagination-container">
-                    <div class="pagination-info">
-                        <span id="paginationInfo">Showing 1-10 of 50 claims</span>
-                    </div>
-                    <div class="pagination-controls">
-                        <button class="pagination-btn" id="prevBtn" onclick="changePage(-1)" disabled>
-                            <i class="bi bi-chevron-left"></i>
-                            Previous
-                        </button>
-                        <div class="page-numbers" id="pageNumbers">
-                            <!-- Page numbers will be populated by JavaScript -->
-                        </div>
-                        <button class="pagination-btn" id="nextBtn" onclick="changePage(1)">
-                            Next
-                            <i class="bi bi-chevron-right"></i>
-                        </button>
-                    </div>
+                <div style="font-size:0.95em; color:var(--text-secondary); margin-top:0.5em;">
+                    * Click on total value of issued invoices columns to see Warranty details.<br>
+                    * Scroll below to see the Warranty Status of these issued invoices.
                 </div>
             </div>
 

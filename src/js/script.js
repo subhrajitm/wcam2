@@ -109,13 +109,18 @@ let analyticsChart = null;
 
 // Initialize claims table
 function initializeClaimsTable() {
-    renderClaimsTable();
-    renderPagination();
+    const claimsTableBody = document.getElementById('claimsTableBody');
+    if (claimsTableBody) {
+        renderClaimsTable();
+        renderPagination();
+    }
 }
 
 // Render claims table
 function renderClaimsTable() {
     const tbody = document.getElementById('claimsTableBody');
+    if (!tbody) return;
+    
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const pageData = filteredData.slice(startIndex, endIndex);
@@ -152,8 +157,10 @@ function renderClaimsTable() {
 
 // Render pagination
 function renderPagination() {
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const pageNumbers = document.getElementById('pageNumbers');
+    if (!pageNumbers) return;
+    
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     
     let paginationHTML = '';
     for (let i = 1; i <= totalPages; i++) {
@@ -167,18 +174,22 @@ function renderPagination() {
     pageNumbers.innerHTML = paginationHTML;
     
     // Update prev/next buttons
-    document.getElementById('prevBtn').disabled = currentPage === 1;
-    document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
 }
 
 // Update pagination info
 function updatePaginationInfo() {
+    const paginationInfo = document.getElementById('paginationInfo');
+    if (!paginationInfo) return;
+    
     const startIndex = (currentPage - 1) * itemsPerPage + 1;
     const endIndex = Math.min(currentPage * itemsPerPage, filteredData.length);
     const total = filteredData.length;
     
-    document.getElementById('paginationInfo').textContent = 
-        `Showing ${startIndex}-${endIndex} of ${total} claims`;
+    paginationInfo.textContent = `Showing ${startIndex}-${endIndex} of ${total} claims`;
 }
 
 // Change page
