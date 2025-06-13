@@ -1,6 +1,6 @@
 .main-header {
     height: var(--header-height);
-    background: var(--bg-secondary);
+    background: #ffffff;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
