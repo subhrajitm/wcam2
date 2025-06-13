@@ -1,9 +1,15 @@
 .table-section {
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(31,41,55,0.07), 0 1px 2px 0 rgba(249,115,22,0.06);
+    border: 1px solid #f3f4f6;
+    padding: 1.2rem 0.75rem 0.75rem 0.75rem;
+    margin-bottom: 1.2rem;
+    transition: box-shadow 0.2s;
+}
+
+.table-section:hover {
+    box-shadow: 0 8px 32px 0 rgba(31,41,55,0.12), 0 2px 8px 0 rgba(249,115,22,0.12);
 }
 
 .table-header {
@@ -16,10 +22,11 @@
 }
 
 .table-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.01em;
 }
 
 .table-actions {
@@ -59,34 +66,41 @@
 
 .modern-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fafbfc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(31,41,55,0.03);
+    margin-bottom: 0.5rem;
+}
+
+.modern-table th, .modern-table td {
+    padding: 0.55rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.93rem;
 }
 
 .modern-table th {
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+    background: #f3f4f6;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #1f2937;
+    border-top: 1px solid #f3f4f6;
 }
 
-.modern-table td {
-    padding: 0.75rem 1rem;
-    font-size: 0.8rem;
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--border-light);
+.modern-table tr:last-child td {
+    border-bottom: none;
 }
 
 .modern-table tbody tr {
-    transition: all 0.2s ease;
+    transition: background 0.12s;
 }
 
 .modern-table tbody tr:hover {
-    background: var(--bg-tertiary);
+    background: #fef3c7;
+    box-shadow: 0 1px 4px 0 rgba(249,115,22,0.06);
 }
 
 .customer-info {

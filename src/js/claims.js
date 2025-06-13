@@ -304,4 +304,48 @@ function rejectClaim() {
 // Initialize the claims table when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeClaimsTable();
+});
+
+// Invoice data for Final Invoice Status
+const invoiceData = [
+    { shop: 'Shop1', engines: 12, due: 10, issued: 1, upcoming: 1 },
+    { shop: 'Shop2', engines: 7, due: 5, issued: 1, upcoming: 1 },
+    { shop: 'Shop3', engines: 4, due: 1, issued: 3, upcoming: 0 },
+];
+
+function renderInvoiceTable() {
+    const tbody = document.getElementById('claimsTableBody');
+    if (!tbody) return;
+    let totalDue = 0, totalIssued = 0, totalUpcoming = 0;
+    let rows = invoiceData.map(row => {
+        totalDue += row.due;
+        totalIssued += row.issued;
+        totalUpcoming += row.upcoming;
+        return `
+            <tr>
+                <td>${row.shop}</td>
+                <td>${row.engines}</td>
+                <td><span style='color:#e53e3e; font-weight:600;'>${row.due}</span></td>
+                <td><span style='color:#38a169; font-weight:600;'>${row.issued}</span></td>
+                <td><span style='color:#d97706; font-weight:600;'>${row.upcoming}</span></td>
+                <td><button class='btn-export' onclick="alert('Details for ${row.shop}')"><i class='bi bi-eye'></i> Details</button></td>
+            </tr>
+        `;
+    }).join('');
+    // Add total row
+    rows += `
+        <tr>
+            <td>Total</td>
+            <td>-</td>
+            <td><span style='color:#e53e3e; font-weight:600;'>${totalDue}</span></td>
+            <td><span style='color:#38a169; font-weight:600;'>${totalIssued}</span></td>
+            <td><span style='color:#d97706; font-weight:600;'>${totalUpcoming}</span></td>
+            <td></td>
+        </tr>
+    `;
+    tbody.innerHTML = rows;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderInvoiceTable();
 }); 
