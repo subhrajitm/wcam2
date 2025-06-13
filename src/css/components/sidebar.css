@@ -73,7 +73,8 @@
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1;
+    min-height: 0;
 }
 
 .nav-section {
@@ -146,9 +147,13 @@
 }
 
 .bottom-nav-section {
-    margin-top: auto;
-    padding: 1rem 0.5rem;
+    margin-top: 0;
+    padding: 0;
     border-top: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 @media (max-width: 768px) {

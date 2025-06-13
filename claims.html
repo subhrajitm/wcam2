@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,47 +16,50 @@
     <!-- Custom CSS -->
     <link href="src/css/main.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Compact Beautiful Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
             <a href="#" class="sidebar-brand">
-                <img src="src/assets/genpact-logo.svg" alt="Genpact Logo" style="height: 50px; width: auto; max-width: auto; filter: invert(0.8) brightness(0.3) contrast(1.5);">
+                <img src="src/assets/genpact-logo.svg" alt="Genpact Logo"
+                    style="height: 50px; width: auto; max-width: auto; filter: invert(0.8) brightness(0.3) contrast(1.5);">
                 <div style="width: 1px; height: 24px; background-color: #1f2937; margin: 0 12px;"></div>
-                <span style="font-weight: 700; font-size: 1.2rem; color: #1f2937;">WCA</span>
+                <span
+                    style="font-weight: 700; font-size: 1.2rem; background: linear-gradient(135deg, #f97316, #ea580c, #c2410c); -webkit-background-clip: text; background-clip: text; color: transparent;">WCA</span>
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
-    <div class="nav-section">
-        <div class="nav-section-title">Main Menu</div>
-        <div class="nav-item">
-            <a href="index.html" class="nav-link">
-                <i class="nav-icon bi bi-grid"></i>
-                <span>Dashboard</span>
-            </a>
-        </div>
-        <div class="nav-item">
-            <a href="claims.html" class="nav-link active">
-                <i class="nav-icon bi bi-file-text"></i>
-                <span>Claims</span>
-            </a>
-        </div>
-    </div>
-    
-            <div class="nav-section bottom-nav-section">
-        <div style="display: flex; justify-content: space-between; padding: 0 0.5rem;">
-            <button class="nav-link" style="flex: 1; margin-right: 0.5rem;">
-                <i class="nav-icon bi bi-box-arrow-right"></i>
-                <span>Logout</span>
-            </button>
-            <button class="nav-link" style="flex: 1; margin-left: 0.5rem;">
-                <i class="nav-icon bi bi-gear"></i>
-                <span>Settings</span>
-            </button>
-        </div>
-    </div>
-</nav>
+            <div class="nav-section">
+                <div class="nav-section-title">Main Menu</div>
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="nav-icon bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="claims.html" class="nav-link active">
+                        <i class="nav-icon bi bi-file-text"></i>
+                        <span>Claims</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bottom-nav-section">
+                <div style="display: flex; justify-content: space-between; padding: 0.5rem;">
+                    <button class="nav-link" style="flex: 1; margin-right: 0.5rem;">
+                        <i class="nav-icon bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </button>
+                    <button class="nav-link" style="flex: 1; margin-left: 0.5rem;">
+                        <i class="nav-icon bi bi-gear"></i>
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
     </div>
 
     <!-- Main Content -->
@@ -137,7 +141,8 @@
                     <div class="table-actions">
                         <div class="table-search">
                             <i class="bi bi-search"></i>
-                            <input type="text" id="claimsSearch" placeholder="Search claims..." onkeyup="searchClaims()">
+                            <input type="text" id="claimsSearch" placeholder="Search claims..."
+                                onkeyup="searchClaims()">
                         </div>
                         <button class="btn-filter">
                             <i class="bi bi-funnel"></i>
@@ -166,7 +171,7 @@
                         <!-- Claims data will be populated by JavaScript -->
                     </tbody>
                 </table>
-                
+
                 <!-- Pagination Controls -->
                 <div class="pagination-container">
                     <div class="pagination-info">
@@ -199,23 +204,34 @@
 
                 <!-- Claim Summary Card -->
                 <div class="claim-summary-card">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                         <div>
-                            <div style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">Claim ID</div>
-                            <div id="detailClaimId" style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">CLM001</div>
+                            <div
+                                style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">
+                                Claim ID</div>
+                            <div id="detailClaimId"
+                                style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary);">CLM001</div>
                         </div>
                         <div>
-                            <div style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">Status</div>
+                            <div
+                                style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">
+                                Status</div>
                             <div id="detailStatus">
                                 <span class="status-badge status-approved">Approved</span>
                             </div>
                         </div>
                         <div>
-                            <div style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">Claim Amount</div>
-                            <div id="detailAmount" style="font-size: 1.1rem; font-weight: 600; color: var(--accent-color);">$5,200</div>
+                            <div
+                                style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">
+                                Claim Amount</div>
+                            <div id="detailAmount"
+                                style="font-size: 1.1rem; font-weight: 600; color: var(--accent-color);">$5,200</div>
                         </div>
                         <div>
-                            <div style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">Date Filed</div>
+                            <div
+                                style="color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.25rem;">
+                                Date Filed</div>
                             <div id="detailDate" style="font-size: 1rem; color: var(--text-primary);">Jan 15, 2024</div>
                         </div>
                     </div>
@@ -239,7 +255,8 @@
                     <table class="modern-table">
                         <tbody>
                             <tr>
-                                <td style="font-weight: 600; background: var(--bg-tertiary); width: 200px;">Claimant Name</td>
+                                <td style="font-weight: 600; background: var(--bg-tertiary); width: 200px;">Claimant
+                                    Name</td>
                                 <td id="detailClaimantName">John Smith</td>
                             </tr>
                             <tr>
@@ -272,7 +289,8 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; background: var(--bg-tertiary);">Description</td>
-                                <td id="detailDescription">Vehicle collision at intersection of Main St and Oak Ave. Front-end damage to insured vehicle.</td>
+                                <td id="detailDescription">Vehicle collision at intersection of Main St and Oak Ave.
+                                    Front-end damage to insured vehicle.</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; background: var(--bg-tertiary);">Estimated Repair Cost</td>
@@ -284,7 +302,8 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; background: var(--bg-tertiary);">Settlement Amount</td>
-                                <td id="detailSettlement" style="font-weight: 600; color: var(--accent-color);">$5,200</td>
+                                <td id="detailSettlement" style="font-weight: 600; color: var(--accent-color);">$5,200
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -300,7 +319,8 @@
                         <i class="bi bi-pencil"></i>
                         Edit Details
                     </button>
-                    <button class="btn-filter" style="border-color: var(--danger-color); color: var(--danger-color);" onclick="rejectClaim()">
+                    <button class="btn-filter" style="border-color: var(--danger-color); color: var(--danger-color);"
+                        onclick="rejectClaim()">
                         <i class="bi bi-x-circle"></i>
                         Reject Claim
                     </button>
@@ -314,4 +334,5 @@
     <!-- Custom JS -->
     <script src="src/js/claims.js"></script>
 </body>
+
 </html>
