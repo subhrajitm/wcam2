@@ -1,0 +1,52 @@
+.service-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.service-support {
+    background: var(--support-bg);
+    color: var(--support-color);
+}
+
+.service-software {
+    background: var(--software-bg);
+    color: var(--software-color);
+}
+
+.service-consulting {
+    background: var(--consulting-bg);
+    color: var(--consulting-color);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-approved {
+    background: var(--success-bg);
+    color: var(--success-color);
+}
+
+.status-pending {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+}
+
+.status-rejected {
+    background: var(--danger-bg);
+    color: var(--danger-color);
+}
+
+.status-processing {
+    background: var(--info-bg);
+    color: var(--info-color);
+} 

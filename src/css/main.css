@@ -1,0 +1,17 @@
+/* Base */
+@import 'base/variables.css';
+@import 'base/reset.css';
+
+/* Components */
+@import 'components/layout.css';
+@import 'components/sidebar.css';
+@import 'components/header.css';
+@import 'components/table.css';
+@import 'components/metrics.css';
+@import 'components/pagination.css';
+@import 'components/tabs.css';
+@import 'components/analytics.css';
+@import 'components/badges.css';
+
+/* Pages */
+@import 'pages/claims.css'; 

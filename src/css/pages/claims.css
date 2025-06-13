@@ -1,0 +1,124 @@
+.claims-container {
+    padding: 1.5rem;
+}
+
+.claims-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: var(--accent-light);
+}
+
+.claims-details-section {
+    padding: 1.5rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-approved {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-pending {
+    background: var(--warning-color);
+    color: white;
+}
+
+.status-rejected {
+    background: var(--danger-color);
+    color: white;
+}
+
+.status-processing {
+    background: var(--accent-color);
+    color: white;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-view {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.action-view:hover {
+    background: var(--accent-light);
+    color: var(--accent-color);
+}
+
+.action-edit {
+    background: var(--accent-light);
+    color: var(--accent-color);
+}
+
+.action-edit:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-filter, .btn-export {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-filter:hover, .btn-export:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: var(--accent-light);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 
